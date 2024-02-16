@@ -1,15 +1,18 @@
+/* eslint-disable react/prop-types */
 import  { useEffect, useRef, useState } from 'react';
 // import alert from './assets/alert.wav';
 import PlayCircleFilledWhiteIcon from '@mui/icons-material/PlayCircleFilledWhite';
 import PauseCircleIcon from '@mui/icons-material/PauseCircle';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+
 let timer;
 
 function Timer(props) {
   const alertRef = useRef(null);
 //   const [timerForm, setTimerForm] = useState({ minutes: '', seconds: '' });
   // eslint-disable-next-line react/prop-types
-  const [countdown, setCountdown] = useState(props.time);
+  const [countdown, setCountdown] = useState(props.targils.time);
   const [isCounting, setIsCounting] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
 
@@ -36,7 +39,7 @@ function Timer(props) {
   };
 
   const reset = () => {
-    setCountdown(props.time);
+    setCountdown(props.targils.time);
     setIsCounting(false);
     setIsPaused(false);
     clearInterval(timer);
@@ -62,7 +65,14 @@ function Timer(props) {
 
       <div className="flex items-center gap-2">
        
-       
+      <button
+						onClick={props.click}
+            data-id={props.targils.videoID}
+						className="btn btn-sm btn-error disabled:btn-success disabled:opacity-30 flex items-center content-center">
+              
+						<YouTubeIcon />
+					</button>
+					<p className="w-20 md:w-50 text-center m-2">{props.targils.name}</p>
         <div className="grid grid-flow-col text-center auto-cols-max items-center gap-2">
           <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
             <span className="countdown font-mono text-1-sm">
@@ -90,7 +100,7 @@ function Timer(props) {
             </button>
           )}
           <button
-            className="btn btn-sm btn-error disabled:btn-error disabled:opacity-30 flex items-center content-center"
+            className="btn btn-sm btn-error disabled:btn-error disabled:text-green-50 disabled:opacity-30 flex items-center content-center"
             disabled={!isCounting}
             onClick={reset}
           >

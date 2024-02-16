@@ -29,18 +29,19 @@ function App() {
 		},
 	]);
 	const [currentVideoUrl, setCurrentVideoUrl] = useState(targils[0].videoID);
-	const [timers, settimers] = useState([120, 60, 30]);
+	// const [timers, settimers] = useState([120, 60, 30]);
 	const handleButtonClick = (e) => {
-    console.log('Event:', e);
-    console.log('Current Target:', e.currentTarget);
-    console.log('Parent Element:', e.currentTarget.parentElement);
-    console.log('Data ID:', e.currentTarget.parentElement.dataset.id);
-    let id=e.currentTarget.parentElement.dataset.id;
+    // console.log('Event:', e);
+    // console.log('Current Target:', e.currentTarget);
+    // console.log('Parent Element:', e.currentTarget.parentElement.parentElement);
+    // console.log('Parent Element:', e.currentTarget.parentElement.parentElement.parentElement);
+    // console.log('Data ID:', e.currentTarget.parentElement.parentElement.parentElement.dataset.id);
+    let id=e.currentTarget.dataset.id;
 		setCurrentVideoUrl(id);
 	};
 	return (
 		<>
-		<div className='flex flex-col justify-center'>
+		<div className='flex flex-col justify-center items-center'>
 
 			<iframe className='m-4'
 				title="YouTube Video"
@@ -53,16 +54,10 @@ function App() {
 
 			{targils.map((item, index) => (
 				<div
-				className="flex p-2  text-center items-center justify-center space-x-2 "
-				data-id={item.videoID}
+				className="flex p-2 items-center justify-center space-x-2"
+				// data-id={item.videoID}
 				key={index}>
-					<button
-						onClick={handleButtonClick}
-						className="btn btn-sm btn-error disabled:btn-success disabled:opacity-30 flex items-center content-center">
-						<YouTubeIcon />
-					</button>
-					<p className="min-w-20">{item.name}</p>
-					<Timer time={item.time}></Timer>
+					<Timer click={handleButtonClick} targils={item}></Timer>
 				</div>
 			))}
 			</div>
