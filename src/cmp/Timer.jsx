@@ -63,7 +63,7 @@ function Timer(props) {
       <div className="flex items-center gap-2">
        
        
-        <div className="grid grid-flow-col text-center auto-cols-max items-center">
+        <div className="grid grid-flow-col text-center auto-cols-max items-center gap-2">
           <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
             <span className="countdown font-mono text-1-sm">
               <span style={{ '--value': minutes }}>{minutes}</span>

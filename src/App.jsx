@@ -40,10 +40,12 @@ function App() {
 	};
 	return (
 		<>
-			<iframe
+		<div className='flex flex-col justify-center'>
+
+			<iframe className='m-4'
 				title="YouTube Video"
-				width="560"
-				height="315"
+				width="360"
+				// height="120"
 				src={`https://www.youtube.com/embed/${currentVideoUrl}`}
 				frameBorder="0"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -51,18 +53,19 @@ function App() {
 
 			{targils.map((item, index) => (
 				<div
-					className="flex bg-slate-500 p-2 text-center items-center justify-center space-x-2 "
-					data-id={item.videoID}
-					key={index}>
+				className="flex p-2  text-center items-center justify-center space-x-2 "
+				data-id={item.videoID}
+				key={index}>
 					<button
 						onClick={handleButtonClick}
 						className="btn btn-sm btn-error disabled:btn-success disabled:opacity-30 flex items-center content-center">
 						<YouTubeIcon />
 					</button>
-					<p className="min-w-40">{item.name}</p>
+					<p className="min-w-20">{item.name}</p>
 					<Timer time={item.time}></Timer>
 				</div>
 			))}
+			</div>
 		</>
 	);
 }
