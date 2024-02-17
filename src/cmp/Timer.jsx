@@ -58,13 +58,14 @@ function Timer(props) {
   };
 
   return (
-    <div className="container bg-gray-800 rounded-xl p-4">
+    <div className="container bg-gray-800 rounded-xl p-4 w-72">
       {/* <audio className="hidden" ref={alertRef}>
         <source src={alert} />
       </audio> */}
 
-      <div className="flex items-center gap-1 h-28">
-       
+      <div className="flex flex-col items-center gap-1">
+        
+       <div className='flex justify-between w-64 items-center'>
       <button
 						onClick={props.click}
             data-id={props.targils.videoID}
@@ -72,14 +73,17 @@ function Timer(props) {
               
 						<YouTubeIcon />
 					</button>
-					<p className="w-20 md:w-50 text-center m-2">{props.targils.name}</p>
+        <p className="  font-bold md:w-50 text-sm text-center m-2">{props.targils.name}</p>
+       </div>
+       <div className=' flex'>
+
         <div className="grid grid-flow-col text-center auto-cols-max items-center gap-2">
           <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
             <span className="countdown font-mono text-1-sm">
               <span style={{ '--value': minutes }}>{minutes}</span>
             </span>
           </div>
-          <span className="font-mono text-1-sm">:</span>
+          <span className="font-mono">:</span>
           <div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
             <span className="countdown font-mono text-1-sm">
               <span style={{ '--value': seconds }}>{seconds}</span>
@@ -87,9 +91,9 @@ function Timer(props) {
           </div>
           {!isCounting && (
             <button
-              className="btn btn-sm btn-success disabled:btn-success disabled:opacity-30 flex items-center content-center" 
-              disabled={countdown <= 0}
-              onClick={start}
+            className="btn btn-sm btn-success disabled:btn-success disabled:opacity-30 flex items-center content-center" 
+            disabled={countdown <= 0}
+            onClick={start}
             >
               <PlayCircleFilledWhiteIcon></PlayCircleFilledWhiteIcon>
             </button>
@@ -103,10 +107,11 @@ function Timer(props) {
             className="btn btn-sm btn-error disabled:btn-error disabled:text-green-50 disabled:opacity-30 flex items-center content-center"
             disabled={!isCounting}
             onClick={reset}
-          >
+            >
             Reset
           </button>
         </div>
+      </div>
       </div>
     </div>
   );
