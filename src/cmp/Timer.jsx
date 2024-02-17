@@ -58,12 +58,12 @@ function Timer(props) {
   };
 
   return (
-    <div className="container">
+    <div className="container bg-gray-800 rounded-xl p-4">
       {/* <audio className="hidden" ref={alertRef}>
         <source src={alert} />
       </audio> */}
 
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-1 h-28">
        
       <button
 						onClick={props.click}

@@ -55,6 +55,7 @@ function App() {
 	};
 	return (
 		<>
+		<h2  dir ="rtl"className='text-center m-2 p-2 font-bold'>יאללה בר צא להתאמן!</h2>
 			<div className="flex flex-col justify-center items-center">
 				<iframe
 					className="m-4"
