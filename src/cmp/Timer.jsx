@@ -58,14 +58,14 @@ function Timer(props) {
   };
 
   return (
-    <div className="container bg-gray-800 rounded-xl p-4 w-72">
+    <div className="container bg-gray-800 rounded-xl p-4 w-80">
       {/* <audio className="hidden" ref={alertRef}>
         <source src={alert} />
       </audio> */}
 
       <div className="flex flex-col items-center gap-1">
         
-       <div className='flex justify-between w-64 items-center'>
+       <div className='flex justify-between w-full items-center'>
       <button
 						onClick={props.click}
             data-id={props.targils.videoID}

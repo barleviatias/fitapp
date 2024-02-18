@@ -60,7 +60,7 @@ function App() {
 				<iframe
 					className="m-4"
 					title="YouTube Video"
-					width="360"
+					width="320"
 					// height="120"
 					src={`https://www.youtube.com/embed/${currentVideoUrl}`}
 					frameBorder="0"
