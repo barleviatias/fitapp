@@ -81,7 +81,7 @@ function SuperSet(props) {
 							className="btn btn-sm btn-error disabled:btn-success disabled:opacity-30 flex items-center content-center">
 							<YouTubeIcon />
 						</button>
-						<p className="  font-bold md:w-50 text-sm text-center m-2">
+						<p className="font-bold md:w-50 text-sm text-center m-2">
 							{props.targils.name[1]}
 						</p>
 					</div>

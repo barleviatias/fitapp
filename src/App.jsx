@@ -36,7 +36,7 @@ function App() {
 			sets: 3,
 			url: 'https://www.youtube.com/watch?v=_WnQmTe64YQ&list=PL0mBYTE1vseZjRMuH_Yzu59TD45AV6C_e&index=21',
 			videoID: ['FKn89dEtg5o','U_GpslW7atE'],
-			isSuper: true,
+			isSuper: true 
 		},
 		{
 			name: ' שכיבות סמיכה רסט פאוז',
